@@ -1,12 +1,12 @@
-import requests
-
 # Grabs a list of page names from a specified query page on the wiki
 
-base_url = "" 
-query_page = "Unusedimages" # e.g. "Unusedimages" or "Unusedcategories"
-out_file_path = ""          # Where to save the output file
-offset = 0                  # Start from this number on the list
-limit = 100                 # Proceed in groups of pages this big
+import requests
+
+base_url = "http://192.168.1.20:1138"   # Base URL of the wiki
+query_page = "Unusedimages"             # e.g. "Unusedimages" or "Unusedcategories"
+out_file_path = ""                      # Where to put the output file
+offset = 0                              # Start from this page on the list
+limit = 500                             # Go by groups of this many pages
 
 params = {
     "qplimit": str(limit),
