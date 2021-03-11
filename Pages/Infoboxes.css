@@ -1,0 +1,121 @@
+/***** Portable Infoboxes *****/
+.portable-infobox {
+	width: 250px;
+	background: none !important;
+}
+
+/* Adjusts reference size */
+.portable-infobox .reference, .refadjust .reference {
+	font-size: 7.5px;
+	line-height: 1.5;
+}
+
+/* Alternating row colors;
+   Colors taken directly from 
+   the original, non-PI infoboxes */
+
+.portable-infobox .pi-data:nth-child(even) { 
+        background-color: #F0F0F0; 
+}
+
+.portable-infobox .pi-data:nth-child(odd) {
+        background-color: #f9f9f9;
+}
+/* Eliminate border between rows */
+.portable-infobox .pi-border-color { border-bottom-style: none !important; }
+
+/* Standardized padding for infobox elements */
+.portable-infobox .pi-item-spacing { padding: 4px; }
+
+/* Title field */
+.portable-infobox .pi-title {
+	font-size: 0.96em;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 1.5;
+}
+
+/* Secondary font - section headers and labels */
+.portable-infobox .pi-secondary-font {
+	font-size: 0.8em;
+	line-height: 1.5;
+}
+
+/* Field labels */
+.portable-infobox .pi-data-label {
+	font-weight: normal;
+	padding: 0;
+        display:-webkit-flex;
+        display:flex;
+}
+.pi-data .pi-data-label {
+        -webkit-flex-basis:auto;
+           -moz-flex-basis:auto;
+                flex-basis:auto;
+        -webkit-align-items:center;
+           -moz-align-items:center;
+                align-items:center;
+        width:45%;
+}
+
+/* Field values */
+.portable-infobox .pi-data-value {
+	font-size: 0.8em;
+	line-height: 1.5;
+}
+.pi-data .pi-data-value { 
+        ms-flex-preferred-size:auto;
+        -webkit-flex-basis:auto;
+           -moz-flex-basis:auto;
+                flex-basis:auto;
+        -webkit-align-items:center;
+           -moz-align-items:center;
+                align-items:center;
+        width:55%
+}
+.portable-infobox .pi-data-value:not(:first-child) { padding-left: 5px; }
+.portable-infobox .pi-data-value li { line-height: 1.5em; }
+
+/* Bottom rounded corners */
+.portable-infobox.pi-navigation:last-child,
+.portable-infobox .pi-navigation:last-child {
+      -webkit-border-radius: 0 0 10px 10px;
+         -moz-border-radius: 0 0 10px 10px;
+          -ms-border-radius: 0 0 10px 10px;
+              border-radius: 0 0 10px 10px;
+     text-align:center;
+}
+
+/* Image handling;
+   giving this the same style as
+   .infoboximage img 
+   in Common.css */
+
+.pi-image img {
+     max-width:100%;
+     height:auto
+}
+
+/* Fix alignment of lists in horizontal rows */
+.pi-horizontal-group-item.pi-data-value {
+	text-align: left;
+	background: #f9f9f9;
+}
+
+.pi-horizontal-group-item.pi-data-label {
+	display: table-cell;
+	border-bottom: #bfdaeb 1px solid !important;
+	background: #f0f0f0;
+}
+
+/* Reduce spacing between bullet and text */
+.portable-infobox li::first-letter {margin-left: -3px;}
+
+/* Modifying spacing between field name and text in Battle300 infobox */
+.pi-theme-Battle300 .pi-data-label {
+        width:30%;
+}
+.pi-theme-Battle300 .pi-data-value {
+	width:80%;
+}
