@@ -1,8 +1,8 @@
+# Get a list of the names of all articles listed on the wiki's Special:UnusedRedirects page
+
 import requests
 import lxml
 import bs4
-
-# Get a list of the names of all articles listed on the wiki's Special:UnusedRedirects page
 
 base_url = "http://192.168.1.20:1138"   # Base URL of the wiki
 out_file_path = ""                      # Where to put the output file
