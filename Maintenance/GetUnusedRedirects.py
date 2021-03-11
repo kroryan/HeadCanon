@@ -4,10 +4,10 @@ import bs4
 
 # Get a list of the names of all articles listed on the wiki's Special:UnusedRedirects page
 
-base_url = "http://192.168.1.20:1138"
-out_file_path = "UnusedRedirects.txt"
-offset = 0
-limit = 500
+base_url = "http://192.168.1.20:1138"   # Base URL of the wiki
+out_file_path = "UnusedRedirects.txt"   # Full path to the output file
+offset = 0                              # Start from this page on the list
+limit = 500                             # Go by groups of this many pages
 
 url = base_url + "/index.php?title=Special:UnusedRedirects&limit="
 
