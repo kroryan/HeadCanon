@@ -1,0 +1,65 @@
+/* Easy class for hiding elements in Cosmos */
+.cosmos-hide {
+	display: none;
+}
+
+.editpage-sourcewidemode-on .edit-widemode-hide {
+	display: none;
+}
+
+/* Prevent scrollbox behavior when there are mulitple editintro templates. */
+.editpage-intro > .editpage-intro-wrapper {
+	max-height: 100%;
+}
+
+/* Limit width of edit summary dropdown; reason 4.5 is too long. */
+#stdEditSummaries {
+    width: 265px;
+}
+
+.portable-infobox .pi-data-value li{
+    padding-bottom:0px;
+}
+
+.portable-infobox .pi-image-thumbnail{
+	max-width:100%;
+	height:auto;
+}
+
+/* Fix for TOC */
+.mw-content-ltr .toc ul, .mw-content-rtl .mw-content-ltr .toc ul {list-style: none;margin: 0}
+.toc .toctitle {text-align: center}
+
+/* Fix for list of pages in category pages */
+.mw-category .mw-category-group ul, .mw-imagepage-linkstoimage, #mw-pages .mw-content-ltr li { list-style: square }
+
+/* Fix for LinkSuggest */
+.oo-ui-popupWidget-body {overflow: auto}
+.oo-ui-optionWidget.oo-ui-labelElement > .oo-ui-labelElement-label {overflow: visible}
+
+/* Fix for hover on sliders */
+.wikiaPhotoGallery-slider-body .horizontal .description,
+.wikiaPhotoGallery-slider-body .horizontal .description-background,
+.wikiaPhotoGallery-slider-body .horizontal .nav {
+    transform: translateY(0) !important;
+}
+
+/* Fix link color for the READ MORE link on sliders */
+.read-more-button-wrapper span { color: white; }
+
+/* Fix for editing preview in ve source mode */
+.ve-ui-overlay .oo-ui-window-body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+/* Fix for editing preview in source mode */
+#wikiPreview .mw-parser-output {
+    margin-right: 330px;
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+#wikiPreview .mw-parser-output p + p {margin: 0.4em 0}
+.ns-2 #wikiPreview .mw-parser-output {margin-right: 0}
+
+/* Fix: hiding the category 'Pages using DynamicPageList parser function' */
+li[data-name="Pages using DynamicPageList parser function"] {display:none !important}
