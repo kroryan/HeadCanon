@@ -36,9 +36,9 @@ local DEBUG_MODE = false -- if true, errors are not caught
 local iconData = {
 	btr = {
 		image = "Era-icon-btr.png",
-		tooltip = "The subject of this article appeared Before the Republic.",
-		link = "Before the Republic",
-		category = "Before the Republic era articles"
+		tooltip = "The subject of this article appeared before the Republic.",
+		link = "Pre-Republic era",
+		category = "Pre-Republic era articles"
 	},
 	old = {
 		image = "Era-icon-old.png",
@@ -256,12 +256,19 @@ end
 function Eras:renderPublishingIcons()
 	local ret = {}
 	local codes = {'btr', 'old', 'gpr', 'tcw', 'imp', 'reb', 'new', 'njo', 'leg'}
+	local has_icon = false
 	for _, code in ipairs(codes) do
 		local data = self:getIconData(code)
 		if data then
 			ret[#ret + 1] = self:renderIcon(data)
+			has_icon = true
 		end
 	end
+	
+	if not has_icon then
+		self:addCategory('Articles with no specified publishing era')
+	end
+	
 	return table.concat(ret)
 end
 
