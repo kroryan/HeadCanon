@@ -14,6 +14,7 @@ from tqdm import tqdm
 from PIL import Image
 import io
 import datetime
+import json
 
 # Configurar logging
 log_filename = f"check_integrity_{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}.log"
@@ -111,6 +112,19 @@ def get_local_files(files_dir="Files"):
     except Exception as e:
         logging.error(f"Error al obtener archivos locales: {str(e)}")
         return []
+
+def load_verified_files(verified_file="verified_files.json"):
+    """Carga la lista de archivos verificados previamente"""
+    try:
+        if os.path.exists(verified_file):
+            with open(verified_file, "r", encoding="utf-8") as f:
+                verified = json.load(f)
+                logging.info(f"Se cargaron {len(verified)} archivos previamente verificados")
+                return verified
+        return {}
+    except Exception as e:
+        logging.error(f"Error al cargar archivos verificados: {str(e)}")
+        return {}
 
 def check_images_integrity(local_files, files_dir="Files", check_all=False):
     """Verifica la integridad de las imágenes descargadas"""
