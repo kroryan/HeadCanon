@@ -126,7 +126,7 @@ def load_verified_files(verified_file="verified_files.json"):
         logging.error(f"Error al cargar archivos verificados: {str(e)}")
         return {}
 
-def check_images_integrity(local_files, files_dir="Files", check_all=False):
+def check_images_integrity(local_files, files_dir="Files", check_all=False, skip_verified=True):
     """Verifica la integridad de las imágenes descargadas"""
     options = webdriver.ChromeOptions()
     options.add_argument("--disable-extensions")
@@ -138,10 +138,13 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
     corrupted_files = []
     checked_count = 0
     checked_with_web = 0
+    skipped_count = 0
     start_time = time.time()
     
     # Crear un archivo para ir guardando los resultados en tiempo real
     results_filename = f"corrupted_files_progress_{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}.txt"
+      verified_files = load_verified_files(args.verified_file)
+    verified_hashes = {}  # Para almacenar hashes de archivos validados en esta ejecución
     
     try:
         service = Service(ChromeDriverManager().install())
@@ -151,6 +154,21 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
         progress_bar = tqdm(total=len(local_files), desc="Verificando archivos")
         
         for filename in local_files:
+            file_path = os.path.join(files_dir, filename)
+            
+            # Verificar si el archivo ya fue verificado anteriormente
+            if skip_verified and filename in verified_files:
+                # Comprobar si el tamaño y fecha de modificación siguen siendo los mismos
+                stat_info = os.stat(file_path)
+                current_size = stat_info.st_size
+                current_mtime = stat_info.st_mtime
+                
+                if (verified_files[filename]["size"] == current_size and 
+                    abs(verified_files[filename]["mtime"] - current_mtime) < 1):  # Tolerancia de 1 segundo
+                    skipped_count += 1
+                    progress_bar.update(1)
+                    continue
+            
             checked_count += 1
             progress_bar.update(1)
             
@@ -158,14 +176,13 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
             if checked_count % 10 == 0:
                 elapsed = time.time() - start_time
                 files_per_second = checked_count / elapsed if elapsed > 0 else 0
-                eta = (len(local_files) - checked_count) / files_per_second if files_per_second > 0 else 0
+                eta = (len(local_files) - checked_count - skipped_count) / files_per_second if files_per_second > 0 else 0
                 progress_bar.set_description(
                     f"Verificados: {checked_count}/{len(local_files)} | "
+                    f"Omitidos: {skipped_count} | "
                     f"Corruptos: {len(corrupted_files)} | "
                     f"ETA: {int(eta/60)} min"
                 )
-            
-            file_path = os.path.join(files_dir, filename)
             
             # Verificar integridad básica de la imagen
             if not is_image_valid(file_path):
@@ -182,6 +199,7 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
                 continue
                 
             # Verificación avanzada contra la versión en línea (opcional)
+            corrupted = False
             if check_all or random.random() < 0.1:
                 checked_with_web += 1
                 image_url, online_size = get_online_image_info(driver, filename)
@@ -204,6 +222,7 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
                                 corrupted_name = f"File:{filename}"
                                 if corrupted_name not in corrupted_files:
                                     corrupted_files.append(corrupted_name)
+                                    corrupted = True
                                     
                                     # Guardar en tiempo real y mostrar solo archivos con problemas
                                     print(f"\n⚠️ Discrepancia de tamaño: {filename}")
@@ -216,9 +235,25 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
                             logging.error(f"Error al analizar tamaño para {filename}: {str(e)}")
                 except Exception as e:
                     logging.error(f"Error al verificar tamaño para {filename}: {str(e)}")
+            
+            # Si el archivo pasó todas las verificaciones, añadirlo a la lista de verificados
+            if not corrupted:
+                stat_info = os.stat(file_path)
+                file_hash = calculate_file_hash(file_path)
+                verified_files[filename] = {
+                    "size": stat_info.st_size,
+                    "mtime": stat_info.st_mtime,
+                    "hash": file_hash,
+                    "verified_date": datetime.datetime.now().isoformat()
+                }
         
         # Cerrar la barra de progreso
         progress_bar.close()
+    
+        # Guardar la lista actualizada de archivos verificados
+        with open("verified_files.json", "w", encoding="utf-8") as f:
+            json.dump(verified_files, f, indent=2)
+            logging.info(f"Se guardaron {len(verified_files)} archivos verificados en verified_files.json")
     
     except Exception as e:
         logging.error(f"Error crítico: {str(e)}")
@@ -227,6 +262,7 @@ def check_images_integrity(local_files, files_dir="Files", check_all=False):
     
     # Resumen final
     logging.info(f"Archivos verificados: {checked_count}/{len(local_files)}")
+    logging.info(f"Archivos omitidos (previamente verificados): {skipped_count}")
     logging.info(f"Archivos verificados contra la web: {checked_with_web}")
     logging.info(f"Archivos corruptos encontrados: {len(corrupted_files)}")
     logging.info(f"Tiempo total: {time.time() - start_time:.2f} segundos")
@@ -241,11 +277,19 @@ def main():
                         help="Directorio donde se almacenan los archivos descargados (default: Files)")
     parser.add_argument("--check-all", action="store_true",
                         help="Verificar todos los archivos contra la web (más lento pero más preciso)")
+    parser.add_argument("--force", action="store_true",
+                        help="Fuerza la verificación de todos los archivos, incluso los ya verificados anteriormente")
+    parser.add_argument("--verified-file", type=str, default="verified_files.json",
+                        help="Archivo donde se guarda el historial de archivos verificados (default: verified_files.json)")
     args = parser.parse_args()
-
+    
     print(f"📊 Verificador de integridad de imágenes - Logs guardados en: {log_filename}")
     print("📝 Los resultados se guardarán a medida que se encuentren problemas")
     print("⚠️ Solo se mostrarán en pantalla los archivos con problemas")
+    if args.force:
+        print("🔄 Modo forzado: se verificarán TODOS los archivos")
+    else:
+        print(f"⏩ Modo normal: se omitirán archivos ya verificados ({args.verified_file})")
     print("--------------------------------------------------")
 
     # Verificar que el directorio de archivos existe
@@ -264,9 +308,13 @@ def main():
     logging.info(f"Se verificarán {len(local_files)} archivos descargados.")
     print(f"🔍 Se verificarán {len(local_files)} archivos descargados...")
     print("--------------------------------------------------")
-    
-    # Comprobar integridad
-    corrupted_files = check_images_integrity(local_files, args.files_dir, args.check_all)
+      # Comprobar integridad
+    corrupted_files = check_images_integrity(
+        local_files, 
+        args.files_dir, 
+        args.check_all, 
+        skip_verified=not args.force
+    )
     
     # Guardar resultados finales
     if corrupted_files:
