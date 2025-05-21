@@ -1,0 +1,8 @@
+2025-05-21 14:40:43,605 - INFO - Se encontraron 67830 archivos en el directorio 'Files'
+2025-05-21 14:40:43,606 - INFO - Se verificarán 67830 archivos descargados.
+2025-05-21 14:40:43,606 - INFO - ====== WebDriver manager ======
+2025-05-21 14:40:44,247 - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-21 14:40:44,328 - INFO - Get LATEST chromedriver version for google-chrome
+2025-05-21 14:40:44,404 - INFO - Driver [C:\Users\Gebruiker\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-21 14:41:16,805 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'Se ha forzado la interrupción de una conexión existente por el host remoto', None, 10054, None)': /session/de998d7f355806aef485638187276394
+2025-05-21 14:41:18,834 - WARNING - Proceso interrumpido por el usuario.
