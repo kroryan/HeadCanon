@@ -17,8 +17,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 FILE_URL_BASE = "https://forgottenrealms.fandom.com/wiki/"
 
-USERNAME = "kroryen"
-PASSWORD = "sQGDzs4-#Ap.upp"
+USERNAME = "USER"
+PASSWORD = "PASSWORD"
 
 # Ensure the Files directory exists
 os.makedirs("Files", exist_ok=True)
