@@ -1,0 +1,480 @@
+/***** Portable Infoboxes *****/
+
+
+
+/** Testing area — these classes only temporary **/
+.pi-theme-Battle300 .pi-title { background-color: #7995CA; }
+.pi-theme-Battle300 .pi-navigation { background-color: #7995CA; }
+.pi-theme-Battle300 .pi-navigation a { color: white; }
+.pi-theme-Battle300 .pi-header { background-color: #B4C5E3; }
+.pi-theme-Battle300 { width:300px!important }
+.pi-theme-Battle300 .pi-image img { max-width:100%; min-width:100%; height:auto; }
+
+.pi-theme-Battle350 .pi-title { background-color: #7995CA; }
+.pi-theme-Battle350 .pi-navigation { background-color: #7995CA; }
+.pi-theme-Battle350 .pi-navigation a { color: white; }
+.pi-theme-Battle350 .pi-header { background-color: #B4C5E3; }
+.pi-theme-Battle350 { width:350px!important }
+.pi-theme-Battle350 .pi-image img { max-width:100%; min-width:100%; height:auto; }
+
+.pi-theme-Battle400 .pi-title { background-color: #7995CA; }
+.pi-theme-Battle400 .pi-navigation { background-color: #7995CA; }
+.pi-theme-Battle400 .pi-navigation a { color: white; }
+.pi-theme-Battle400 .pi-header { background-color: #B4C5E3; }
+.pi-theme-Battle400 { width:400px!important }
+.pi-theme-Battle400 .pi-image img { max-width:100%; min-width:100%; height:auto; }
+
+/* Aurebesh */
+
+/* This funky little exception to the normal PI code
+   made necessary by the fact that the Aurebesh templates
+   aren't really infoboxes, cause they deliver merely
+   tabular, graphical  links */
+
+.pi-theme-Aurebesh .pi-title { background-color: #808080; }
+.pi-theme-Aurebesh .pi-navigation { background-color: #808080; }
+.pi-theme-Aurebesh .pi-navigation a { color: white; }
+.pi-theme-Aurebesh .pi-header { background-color: #D6F0F5; }
+.pi-theme-Aurebesh,
+.pi-theme-Aurebesh .infobox { width: 250px!important }
+.pi-theme-Aurebesh table.infoboxtable,
+.pi-theme-Aurebesh .infobox table.infoboxtable { max-width:100% } 
+/* Character */
+.pi-theme-character .pi-title { background-color: #94C7D1; }
+.pi-theme-character .pi-navigation { background-color: #94C7D1; }
+.pi-theme-character .pi-navigation a { color: white; }
+.pi-theme-character .pi-header { background-color: #D6F0F5; }
+/* Bounty hunter */
+.pi-theme-Bounty-hunter .pi-title { background-color: #406B2E; }
+.pi-theme-Bounty-hunter .pi-navigation { background-color: #406B2E; }
+.pi-theme-Bounty-hunter .pi-navigation a { color: white; }
+.pi-theme-Bounty-hunter .pi-header { background-color: #8DB87A; }
+/* Bureaucrat */
+.pi-theme-Bureaucrat .pi-title { background-color: #9966CC; }
+.pi-theme-Bureaucrat .pi-navigation { background-color: #9966CC; }
+.pi-theme-Bureaucrat .pi-navigation a { color: white; }
+.pi-theme-Bureaucrat .pi-header { background-color: #C9A0DC; }
+/* Chiss Ascendancy */
+.pi-theme-Chiss-Ascendancy .pi-title { background-color: #1994E6; }
+.pi-theme-Chiss-Ascendancy .pi-navigation { background-color: #1994E6; }
+.pi-theme-Chiss-Ascendancy .pi-navigation a { color: white; }
+.pi-theme-Chiss-Ascendancy .pi-header { background-color: #9ED5FA; }
+/* CIS */
+.pi-theme-CIS .pi-title { background-color: #73263D; }
+.pi-theme-CIS .pi-navigation { background-color: #73263D; }
+.pi-theme-CIS .pi-navigation a { color: white; }
+.pi-theme-CIS .pi-header { background-color: #D194A6; }
+/* Corporate */
+.pi-theme-Corporate .pi-title { background-color: #BB6331; }
+.pi-theme-Corporate .pi-navigation { background-color: #BB6331; }
+.pi-theme-Corporate .pi-navigation a { color: white; }
+.pi-theme-Corporate .pi-header { background-color: #DD8450; }
+/* Criminal */
+.pi-theme-Criminal .pi-title { background-color: #6B342E; }
+.pi-theme-Criminal .pi-navigation { background-color: #6B342E; }
+.pi-theme-Criminal .pi-navigation a { color: white; }
+.pi-theme-Criminal .pi-header { background-color: #A66159; }
+/* Dark Jedi */
+.pi-theme-Dark-Jedi .pi-title { background-color: #444444; }
+.pi-theme-Dark-Jedi .pi-navigation { background-color: #444444; }
+.pi-theme-Dark-Jedi .pi-navigation a { color: white; }
+.pi-theme-Dark-Jedi .pi-header { background-color: #777777; }
+/* Dathomiri */
+.pi-theme-Dathomiri .pi-title { background-color: #4B0082; }
+.pi-theme-Dathomiri .pi-navigation { background-color: #4B0082; }
+.pi-theme-Dathomiri .pi-navigation a { color: white; }
+.pi-theme-Dathomiri .pi-header { background-color: #E6E6FA; }
+/* Eternal Empire*/
+.pi-theme-Eternal-Empire .pi-title { background-color: #825D11; }
+.pi-theme-Eternal-Empire .pi-navigation { background-color: #825D11; }
+.pi-theme-Eternal-Empire .pi-navigation a { color: white; }
+.pi-theme-Eternal-Empire .pi-header { background-color: #C9B997; }
+/* First Order */
+.pi-theme-First-Order .pi-title { background-color: #000000; }
+.pi-theme-First-Order .pi-navigation { background-color: #000000; }
+.pi-theme-First-Order .pi-navigation a { color: white; }
+.pi-theme-First-Order .pi-header { background-color: #9E1919; color: white; }
+/* Galactic Empire */
+.pi-theme-Galactic-Empire .pi-title { background-color: #242742; }
+.pi-theme-Galactic-Empire .pi-navigation { background-color: #242742; }
+.pi-theme-Galactic-Empire .pi-navigation a { color: white; }
+.pi-theme-Galactic-Empire .pi-header { background-color: #8589AD; }
+/* Galactic Republic */
+.pi-theme-Galactic-Republic .pi-title { background-color: #2E406B; }
+.pi-theme-Galactic-Republic .pi-navigation { background-color: #2E406B; }
+.pi-theme-Galactic-Republic .pi-navigation a { color: white; }
+.pi-theme-Galactic-Republic .pi-header { background-color: #7089C2; }
+/* GFFA */
+.pi-theme-GFFA .pi-title { background-color: #337147; }
+.pi-theme-GFFA .pi-navigation { background-color: #337147; }
+.pi-theme-GFFA .pi-navigation a { color: white; }
+.pi-theme-GFFA .pi-header { background-color: #5AB577; }
+/* Hutt Cartel */
+.pi-theme-Hutt-Cartel .pi-title { background-color: #B8860B; }
+.pi-theme-Hutt-Cartel .pi-navigation { background-color: #B8860B; }
+.pi-theme-Hutt-Cartel .pi-navigation a { color: white; }
+.pi-theme-Hutt-Cartel .pi-header { background-color: #FCD116; }
+/* Infinite Empire */
+.pi-theme-Infinite-Empire .pi-title { background-color: #FF6600; }
+.pi-theme-Infinite-Empire .pi-navigation { background-color: #FF6600; }
+.pi-theme-Infinite-Empire .pi-navigation a { color: white; }
+.pi-theme-Infinite-Empire .pi-header { background-color: #FF9D00; }
+/* Je'daii */
+.pi-theme-Jedaii .pi-title, .pi-theme-Je_daii .pi-title { background-color: #333333; }
+.pi-theme-Jedaii .pi-navigation, .pi-theme-Je_daii .pi-navigation { background-color: #333333; }
+.pi-theme-Jedaii .pi-navigation a, .pi-theme-Je_daii .pi-navigation a { color: white; }
+.pi-theme-Jedaii .pi-header, .pi-theme-Je_daii .pi-header { background-color: #DDDDDD; }
+/* Jedi */
+.pi-theme-Jedi .pi-title { background-color: #736326; }
+.pi-theme-Jedi .pi-navigation { background-color: #736326; }
+.pi-theme-Jedi .pi-navigation a { color: white; }
+.pi-theme-Jedi .pi-header { background-color: #C2B170; }
+/* Mandalorian */
+.pi-theme-Mandalorian .pi-title { background-color: #9CABB0; }
+.pi-theme-Mandalorian .pi-navigation { background-color: #9CABB0; }
+.pi-theme-Mandalorian .pi-navigation a { color: white; }
+.pi-theme-Mandalorian .pi-header { background-color: #CAD4D5; }
+/* Musician */
+.pi-theme-Musician .pi-title { background-color: #FDD017; color: black; }
+.pi-theme-Musician .pi-navigation { background-color: #FDD017; }
+.pi-theme-Musician .pi-navigation a { color: black; }
+.pi-theme-Musician .pi-header { background-color: #FFF380; }
+/* New Republic */
+.pi-theme-New-Republic .pi-title { background-color: #0F1C8A; }
+.pi-theme-New-Republic .pi-navigation { background-color: #0F1C8A; }
+.pi-theme-New-Republic .pi-navigation a { color: white; }
+.pi-theme-New-Republic .pi-header { background-color: #5260E0; }
+/* Nihil */
+.pi-theme-Nihil .pi-title { background-color: #2D2C4F; }
+.pi-theme-Nihil .pi-navigation { background-color: #2D2C4F; }
+.pi-theme-Nihil .pi-navigation a { color: white; }
+.pi-theme-Nihil .pi-header { background-color: #F55651; }
+/* Rebel */
+.pi-theme-Rebel .pi-title { background-color: #2D1452; }
+.pi-theme-Rebel .pi-navigation { background-color: #2D1452; }
+.pi-theme-Rebel .pi-navigation a { color: white; }
+.pi-theme-Rebel .pi-header { background-color: #7859A6; }
+/* Resistance */
+.pi-theme-Resistance .pi-title { background-color: #000000; }
+.pi-theme-Resistance .pi-navigation { background-color: #000000; }
+.pi-theme-Resistance .pi-navigation a { color: white; }
+.pi-theme-Resistance .pi-header { background-color: #E65600; }
+/* Sith */
+.pi-theme-Sith .pi-title { background-color: #AA0000; }
+.pi-theme-Sith .pi-navigation { background-color: #AA0000; }
+.pi-theme-Sith .pi-navigation a { color: white; }
+.pi-theme-Sith .pi-header { background-color: #EE5555; }
+/* Sith Empire */
+.pi-theme-Sith-Empire .pi-title { background-color: #990000; }
+.pi-theme-Sith-Empire .pi-navigation { background-color: #990000; }
+.pi-theme-Sith-Empire .pi-navigation a { color: white; }
+.pi-theme-Sith-Empire .pi-header { background-color: #B1B2BC; }
+/* Yuuzhan Vong */
+.pi-theme-Yuuzhan-Vong .pi-title { background-color: #663D00; }
+.pi-theme-Yuuzhan-Vong .pi-navigation { background-color: #663D00; }
+.pi-theme-Yuuzhan-Vong .pi-navigation a { color: white; }
+.pi-theme-Yuuzhan-Vong .pi-header { background-color: #A68759; }
+
+/* Deity */
+.pi-theme-Deity .pi-title { background-color: #AAAAAA; }
+.pi-theme-Deity .pi-navigation { background-color: #AAAAAA; }
+.pi-theme-Deity .pi-navigation a { color: white; }
+.pi-theme-Deity .pi-header { background-color: #DDDDDD; }
+/* Droid and Droid_series */
+.pi-theme-Droid .pi-title { background-color: #B5B5B5; }
+.pi-theme-Droid .pi-navigation { background-color: #B5B5B5; }
+.pi-theme-Droid .pi-navigation a { color: white; }
+.pi-theme-Droid .pi-header { background-color: #BBDDBB; }
+/* Pet */
+.pi-theme-Pet .pi-title { background-color: #339900; }
+.pi-theme-Pet .pi-navigation { background-color: #339900; }
+.pi-theme-Pet .pi-navigation a { color: white; }
+.pi-theme-Pet .pi-header { background-color: #33FF33; }
+
+/***** Miscellaneous *****/
+/* Disease */
+.pi-theme-Disease .pi-title { background-color: #330033; }
+.pi-theme-Disease .pi-navigation { background-color: #330033; }
+.pi-theme-Disease .pi-navigation a { color: white; }
+.pi-theme-Disease .pi-header { background-color: #CCCCCC; }
+/* Force_power and Lightsaber_form */
+.pi-theme-Force .pi-title { background-color: #94C7D1; color: black; }
+.pi-theme-Force .pi-navigation { background-color: #94C7D1; }
+.pi-theme-Force .pi-navigation a { color: black; }
+.pi-theme-Force .pi-header { background-color: #D6F0F5; }
+/* IU media */
+.pi-theme-IU-media .pi-title { background-color: #6E373D; }
+.pi-theme-IU-media .pi-navigation { background-color: #6E373D; }
+.pi-theme-IU-media .pi-navigation a { color: white; }
+.pi-theme-IU-media .pi-header { background-color: #A85660; }
+/* Language */
+.pi-theme-Language .pi-title { background-color: #999966; }
+.pi-theme-Language .pi-navigation { background-color: #999966; }
+.pi-theme-Language .pi-navigation a { color: white; }
+/* Plant */
+.pi-theme-Plant .pi-title { background-color: #339933; }
+.pi-theme-Plant .pi-navigation { background-color: #339933; }
+.pi-theme-Plant .pi-navigation a { color: white; }
+.pi-theme-Plant .pi-header { background-color: #BBDDBB; }
+/* Species */
+.pi-theme-Species .pi-title { background-color: #808080; }
+.pi-theme-Species .pi-navigation { background-color: #808080; }
+.pi-theme-Species .pi-navigation a { color: white; }
+.pi-theme-Species .pi-header { background-color: #D6F0F5; }
+/* Sport */
+.pi-theme-Sport .pi-title { background-color: #999099; }
+.pi-theme-Sport .pi-navigation { background-color: #999099; }
+.pi-theme-Sport .pi-navigation a { color: white; }
+.pi-theme-Sport .pi-header { background-color: #CCCCCC; }
+/* Game */
+.pi-theme-Game .pi-title { background-color: #999099; }
+.pi-theme-Game .pi-navigation { background-color: #999099; }
+.pi-theme-Game .pi-navigation a { color: white; }
+.pi-theme-Game .pi-header { background-color: #CCCCCC; }
+/* Tactics */
+.pi-theme-Tactics .pi-title { background-color: #333333; }
+.pi-theme-Tactics .pi-navigation { background-color: #333333; }
+.pi-theme-Tactics .pi-navigation a { color: white; }
+.pi-theme-Tactics .pi-header { background-color: #CCCCCC; }
+/* Title infobox */
+.pi-theme-Title .pi-title { background-color: #222222; }
+.pi-theme-Title .pi-navigation { background-color: #222222; }
+.pi-theme-Title .pi-navigation a { color: white; }
+.pi-theme-Title .pi-header { background-color: #CCCCCC; }
+
+/***** Astrographical infoboxes *****/
+/* Constellation, Galaxy, Nebula, Sector, System, Trade_route */
+.pi-theme-astro .pi-title { background-color: #004466; }
+.pi-theme-astro .pi-navigation { background-color: #004466; }
+.pi-theme-astro .pi-navigation a { color: white; }
+.pi-theme-astro .pi-header { background-color: #BBCCDD; }
+.pi-theme-astro .pi-data-value ul { list-style-position:outside!important; margin-left:5px!important } 
+/* Planet and Moon */
+.pi-theme-Planet .pi-title { background-color: #999966; }
+.pi-theme-Planet .pi-navigation { background-color: #999966; }
+.pi-theme-Planet .pi-navigation a { color: white; }
+.pi-theme-Planet .pi-header { background-color: #DDDDBB; }
+/* Star */
+.pi-theme-Star .pi-title { background-color: #CD853F; }
+.pi-theme-Star .pi-navigation { background-color: #CD853F; }
+.pi-theme-Star .pi-navigation a { color: white; }
+.pi-theme-Star .pi-header { background-color: #FFDAB9; }
+
+/***** Event infoboxes *****/
+/* Battle, Campaign, Duel, Election, Law, Mission, Treaty, and War */
+.pi-theme-Battle .pi-title { background-color: #7995CA; }
+.pi-theme-Battle .pi-navigation { background-color: #7995CA; }
+.pi-theme-Battle .pi-navigation a { color: white; }
+.pi-theme-Battle .pi-header { background-color: #B4C5E3; }
+.pi-theme-Battle { width:400px!important }
+.pi-theme-Battle .pi-image img { max-width:100%; min-width:100%; height:auto; }
+/* Event */
+.pi-theme-Event .pi-title { background-color: #B0C4DE; color: black; }
+.pi-theme-Event .pi-navigation { background-color: #B0C4DE; }
+.pi-theme-Event .pi-navigation a { color: black; }
+.pi-theme-Event { width:300px!important }
+.pi-theme-Event .pi-image img { max-width:100%; min-width:100%; height:auto; }
+/* Holiday */
+.pi-theme-Holiday .pi-title { background-color: #023D53; }
+.pi-theme-Holiday .pi-navigation { background-color: #023D53; }
+.pi-theme-Holiday .pi-navigation a { color: white; }
+.pi-theme-Holiday .pi-header { background-color: #679EBA; }
+/* Era and Year*/
+.pi-theme-Year .pi-title { background-color: #B0C4DE; color: #000!important }
+.pi-theme-Year .pi-navigation { text-align:left; font-weight:normal }
+.pi-theme-Year .pi-navigation a { color:#006cb0 }
+.pi-theme-Year .pi-navigation:last-child a { color: #000; }
+.pi-theme-Year .pi-header { background-color: #CCCCCC; }
+.pi-theme-Year .pi-navigation:nth-child(odd) { background-color:#f0f0f0 }
+.pi-theme-Year .pi-navigation:nth-child(even) { background-color:#f9f9f9 }
+.pi-theme-Year .pi-navigation:last-child { background-color:#B0C4DE;text-align:center; font-weight:bold }
+
+
+/***** Group infoboxes *****/
+/* Band */
+.pi-theme-Band .pi-title { background-color: #FDD017; color: black; }
+.pi-theme-Band .pi-navigation { background-color: #FDD017; }
+.pi-theme-Band .pi-navigation a { color: black; }
+.pi-theme-Band .pi-header { background-color: #FFF380; }
+/* Company */
+.pi-theme-Company .pi-title { background-color: #222222; }
+.pi-theme-Company .pi-navigation { background-color: #222222; }
+.pi-theme-Company .pi-navigation a { color: white; }
+.pi-theme-Company .pi-header { background-color: #CCCCCC; }
+/* Family */
+.pi-theme-Family .pi-title { background-color: #BC8F8F; }
+.pi-theme-Family .pi-navigation { background-color: #BC8F8F; }
+.pi-theme-Family .pi-navigation a { color: white; }
+.pi-theme-Family .pi-header { background-color: #FFEBCD; }
+/* Fleet */
+.pi-theme-Fleet .pi-title { background-color: #666699; }
+.pi-theme-Fleet .pi-navigation { background-color: #666699; }
+.pi-theme-Fleet .pi-navigation a { color: white; }
+.pi-theme-Fleet .pi-header { background-color: #CCCCCC; }
+/* Government, Military_unit, Organization, Religion  */
+.pi-theme-group .pi-title { background-color: #999999; }
+.pi-theme-group .pi-navigation { background-color: #999999; }
+.pi-theme-group .pi-navigation a { color: white; }
+.pi-theme-group .pi-header { background-color: #CCCCCC; }
+
+/***** Location infoboxes *****/
+/* City */
+.pi-theme-City .pi-title { background-color: #AC8751; }
+.pi-theme-City .pi-navigation { background-color: #AC8751; }
+.pi-theme-City .pi-navigation a { color: white; }
+.pi-theme-City .pi-header { background-color: #DFCAA0; }
+/* Location */
+.pi-theme-Location .pi-title { background-color: #004466; }
+.pi-theme-Location .pi-navigation { background-color: #004466; }
+.pi-theme-Location .pi-navigation a { color: white; }
+.pi-theme-Location .pi-header { background-color: #BBCCDD; }
+/* Racing track */
+.pi-theme-Racing-track .pi-title { background-color: #715081; }
+.pi-theme-Racing-track .pi-navigation { background-color: #715081; }
+.pi-theme-Racing-track .pi-navigation a { color: white; }
+.pi-theme-Racing-track .pi-header { background-color: #866E91; }
+/* Structure */
+.pi-theme-Structure .pi-title { background-color: #AC8751; }
+.pi-theme-Structure .pi-navigation { background-color: #AC8751; }
+.pi-theme-Structure .pi-navigation a { color: white; }
+.pi-theme-Structure .pi-header { background-color: #DFCAA0; }
+/* Store */
+.pi-theme-Store .pi-title { background-color: #556B2F; }
+.pi-theme-Store .pi-navigation { background-color: #556B2F; }
+.pi-theme-Store .pi-navigation a { color: white; }
+.pi-theme-Store .pi-header { background-color: #6B8E23; }
+
+/***** Object infoboxes *****/
+/* Armor */
+.pi-theme-Armor .pi-title { background-color: #8888FF; }
+.pi-theme-Armor .pi-navigation { background-color: #8888FF; }
+.pi-theme-Armor .pi-navigation a { color: white; }
+.pi-theme-Armor .pi-header { background-color: #89A7FF; }
+/* Artifact */
+.pi-theme-Artifact .pi-title { background-color: #7995CA; }
+.pi-theme-Artifact .pi-navigation { background-color: #7995CA; }
+.pi-theme-Artifact .pi-navigation a { color: white; }
+.pi-theme-Artifact .pi-header { background-color: #C5D1E8; }
+/* Clothing */
+.pi-theme-Clothing .pi-title { background-color: #805817; }
+.pi-theme-Clothing .pi-navigation { background-color: #805817; }
+.pi-theme-Clothing .pi-navigation a { color: white; }
+.pi-theme-Clothing .pi-header { background-color: #AA9470; }
+/* Device */
+.pi-theme-Device .pi-title { background-color: #7995CA; }
+.pi-theme-Device .pi-navigation { background-color: #7995CA; }
+.pi-theme-Device .pi-navigation a { color: white; }
+.pi-theme-Device .pi-header { background-color: #BECCE5; }
+/* Food (might want black) */
+.pi-theme-Food .pi-title { background-color: #FF8000; }
+.pi-theme-Food .pi-navigation { background-color: #FF8000; }
+.pi-theme-Food .pi-navigation a { color: white; }
+.pi-theme-Food .pi-header { background-color: #FFBF00; }
+/* Holocron_infobox */
+.pi-theme-Holocron .pi-title { background-color: #444444; }
+.pi-theme-Holocron .pi-navigation { background-color: #444444; }
+.pi-theme-Holocron .pi-navigation a { color: white; }
+.pi-theme-Holocron .pi-header { background-color: #777777; }
+/* Lightsaber */
+.pi-theme-Lightsaber .pi-title { background-color: #5599AA; }
+.pi-theme-Lightsaber .pi-navigation { background-color: #5599AA; }
+.pi-theme-Lightsaber .pi-navigation a { color: white; }
+.pi-theme-Lightsaber .pi-header { background-color: #AAEEEE; }
+/* Medal */
+.pi-theme-Medal .pi-title { background-color: #7995CA; }
+.pi-theme-Medal .pi-navigation { background-color: #7995CA; }
+.pi-theme-Medal .pi-navigation a { color: white; }
+.pi-theme-Medal .pi-header { background-color: #999999; }
+/* Substance */
+.pi-theme-Substance .pi-title { background-color: #25277A; }
+.pi-theme-Substance .pi-navigation { background-color: #25277A; }
+.pi-theme-Substance .pi-navigation a { color: white; }
+.pi-theme-Substance .pi-header { background-color: #B2ADFF; }
+/* Weapon */
+.pi-theme-Weapon .pi-title { background-color: #AA0000; }
+.pi-theme-Weapon .pi-navigation { background-color: #AA0000; }
+.pi-theme-Weapon .pi-navigation a { color: white; }
+.pi-theme-Weapon .pi-header { background-color: #EE5555; }
+
+/***** OOU infoboxes *****/
+/* Filming_location */
+.pi-theme-Filming-location .pi-title { background-color: #9952E0; }
+.pi-theme-Filming-location .pi-navigation { background-color: #9952E0; }
+.pi-theme-Filming-location .pi-navigation a { color: white; }
+/* OOU_company */
+.pi-theme-OOU-company .pi-title { background-color: #222222; }
+.pi-theme-OOU-company .pi-navigation { background-color: #222222; }
+.pi-theme-OOU-company .pi-navigation a { color: white; }
+/* Person */
+.pi-theme-Person .pi-title { background-color: #336666; }
+.pi-theme-Person .pi-navigation { background-color: #336666; }
+.pi-theme-Person .pi-navigation a { color: white; }
+.pi-theme-Person .pi-header { background-color: #339999; }
+/* User_infobox and Infobox_meeting_time*/
+.pi-theme-User .pi-title { background-color: #94C7D1; }
+.pi-theme-User .pi-navigation { background-color: #94C7D1; }
+.pi-theme-User .pi-navigation a { color: white; }
+.pi-theme-User .pi-header { background-color: #D6F0F5; }
+/* WPinfobox */
+.pi-theme-WPinfobox .pi-title { background-color: #181818; }
+.pi-theme-WPinfobox .pi-navigation { background-color: #181818; }
+.pi-theme-WPinfobox .pi-navigation a { color: white; }
+.pi-theme-WPinfobox .pi-header { background-color: #CCCCCC; }
+
+/* Board_game  */
+.pi-theme-Board-game .pi-title { background-color: #87CEEB; color: black; }
+.pi-theme-Board-game .pi-navigation { background-color: #87CEEB; }
+.pi-theme-Board-game .pi-navigation a { color: black; }
+.pi-theme-Board-game .pi-header { background-color: #73B9A2; }
+/* Template:Media and Magazine_article */
+.pi-theme-Other-Media .pi-title { background-color: #E64219; }
+.pi-theme-Other-Media .pi-navigation { background-color: #E64219; }
+.pi-theme-Other-Media .pi-navigation a { color: white; }
+.pi-theme-Other-Media .pi-header { background-color: #FAB09E; }
+/* Music  */
+.pi-theme-Music .pi-title { background-color: #515981; }
+.pi-theme-Music .pi-navigation { background-color: #515981; }
+.pi-theme-Music .pi-navigation a { color: white; }
+.pi-theme-Music .pi-header { background-color: #D7E8FC; }
+/* Toy_line  */
+.pi-theme-Toy-line .pi-title { background-color: #BF7EA5; }
+.pi-theme-Toy-line .pi-navigation { background-color: #BF7EA5; }
+.pi-theme-Toy-line .pi-navigation a { color: white; }
+.pi-theme-Toy-line .pi-header { background-color: #E2C7D8; }
+/* Website  */
+.pi-theme-Website .pi-title { background-color: #336699; }
+.pi-theme-Website .pi-navigation { background-color: #336699; }
+.pi-theme-Website .pi-navigation a { color: white; }
+.pi-theme-Website .pi-header { background-color: #336699; }
+/* All media infoboxes except the ones above  */
+.pi-theme-Media .pi-title { background-color: #999966; }
+.pi-theme-Media .pi-navigation { background-color: #999966; }
+.pi-theme-Media .pi-navigation a { color: white; }
+.pi-theme-Media .pi-header { background-color: #DDDDBB; }
+
+/***** Starship and vehicle infoboxes *****/
+/* Individual_ship, Space_station, Starship_class  */
+.pi-theme-starship .pi-title { background-color: #666699; }
+.pi-theme-starship .pi-navigation { background-color: #666699; }
+.pi-theme-starship .pi-navigation a { color: white; }
+.pi-theme-starship .pi-header { background-color: #BBBBDD; }
+/* Ship_series  */
+.pi-theme-Ship-series .pi-title { background-color: #305930; }
+.pi-theme-Ship-series .pi-navigation { background-color: #305930; }
+.pi-theme-Ship-series .pi-navigation a { color: white; }
+.pi-theme-Ship-series .pi-header { background-color: #97AA6B; }
+/* Aquatic_vehicle  */
+.pi-theme-Aquatic-vehicle .pi-title { background-color: #446699; }
+.pi-theme-Aquatic-vehicle .pi-navigation { background-color: #446699; }
+.pi-theme-Aquatic-vehicle .pi-navigation a { color: white; }
+.pi-theme-Aquatic-vehicle .pi-header { background-color: #AABBDD; }
+/* Ground_vehicle  */
+.pi-theme-Ground-vehicle .pi-title { background-color: #669966; }
+.pi-theme-Ground-vehicle .pi-navigation { background-color: #669966; }
+.pi-theme-Ground-vehicle .pi-navigation a { color: white; }
+.pi-theme-Ground-vehicle .pi-header { background-color: #BBDDBB; }
+/* Repulsorlift_vehicle  */
+.pi-theme-Repulsorlift-vehicle .pi-title { background-color: #458B74; }
+.pi-theme-Repulsorlift-vehicle .pi-navigation { background-color: #458B74; }
+.pi-theme-Repulsorlift-vehicle .pi-navigation a { color: white; }
+.pi-theme-Repulsorlift-vehicle .pi-header { background-color: #73B9A2; }

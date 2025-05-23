@@ -1,0 +1,8 @@
+# Dependencias principales
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==5.1.0
+selenium==4.15.2
+pywikibot==8.5.1
+mwparserfromhell>=0.6.4
+python-dotenv>=0.21.0
